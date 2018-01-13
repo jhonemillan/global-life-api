@@ -4,6 +4,7 @@ const expressValidator = require('express-validator');
 const Sequelize = require('sequelize');
 const morgan = require('morgan');
 var medicamento = require('./routes/medicamentos');
+var seguimiento = require('./routes/seguimiento_medicamento');
 const app = express();
 //var env = app.get('env') == 'development' ? 'dev':  app.get('env');
 var port = process.env.port || 3000;
@@ -12,6 +13,7 @@ app.use(bodyparser.json());
 app.use(expressValidator());
 app.use(morgan("dev"));
 app.use('/medicamento',medicamento);
+app.use('/seguimiento', seguimiento);
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
