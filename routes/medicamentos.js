@@ -2,7 +2,7 @@ var express = require('express');
 var models = require('../model'); 
 var router = express.Router(); 
 
-router.get('/readAll', function(req, res) {  
+router.get('/getAll', function(req, res) {  
     console.log(typeof(med));
     models.medicamento.findAll().  
     then(function(books) {  

@@ -5,10 +5,12 @@ const Sequelize = require('sequelize');
 const morgan = require('morgan');
 var medicamento = require('./routes/medicamentos');
 var seguimiento = require('./routes/seguimiento_medicamento');
+var cors = require('cors');
 const app = express();
 //var env = app.get('env') == 'development' ? 'dev':  app.get('env');
 var port = process.env.port || 3000;
 
+app.use(cors());
 app.use(bodyparser.json());
 app.use(expressValidator());
 app.use(morgan("dev"));
