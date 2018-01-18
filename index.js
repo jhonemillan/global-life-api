@@ -5,6 +5,7 @@ const Sequelize = require('sequelize');
 const morgan = require('morgan');
 var medicamento = require('./routes/medicamentos');
 var seguimiento = require('./routes/seguimiento_medicamento');
+var braden = require('./routes/braden');
 var cors = require('cors');
 const app = express();
 //var env = app.get('env') == 'development' ? 'dev':  app.get('env');
@@ -16,6 +17,7 @@ app.use(expressValidator());
 app.use(morgan("dev"));
 app.use('/medicamento',medicamento);
 app.use('/seguimiento', seguimiento);
+app.use('/valoracion', braden);
 
 app.get('/', (req, res) => res.send('Hello World!'));
 

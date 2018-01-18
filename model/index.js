@@ -20,5 +20,6 @@ var db = {
 
 db.medicamento = db.sequelize.import('./medicamentos');
 db.seguimiento = db.sequelize.import('./seguimiento');
+db.braden = db.sequelize.import('./braden');
 
 module.exports = db;
