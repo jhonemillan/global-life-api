@@ -3,7 +3,12 @@ var models = require('../model');
 var router = express.Router(); 
 
 router.get('/getAll', function(req, res) {      
-    models.seguimiento.findAll().  
+    models.seguimiento.findAll({
+        include: [{
+            model: models.medicamento
+            ,attributes: ['nom_prod']
+        }]
+    }).  
     then(function(history) {  
         res.status(200).json(history);  
     }, function(error) {  
