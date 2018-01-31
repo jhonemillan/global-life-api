@@ -6,6 +6,7 @@ const morgan = require('morgan');
 var medicamento = require('./routes/medicamentos');
 var seguimiento = require('./routes/seguimiento_medicamento');
 var braden = require('./routes/braden');
+var paciente = require('./routes/paciente');
 var cors = require('cors');
 const app = express();
 //var env = app.get('env') == 'development' ? 'dev':  app.get('env');
@@ -18,6 +19,7 @@ app.use(morgan("dev"));
 app.use('/medicamento',medicamento);
 app.use('/seguimiento', seguimiento);
 app.use('/valoracion', braden);
+app.use('/pacientes', paciente);
 
 app.get('/', (req, res) => res.send('Hello World!'));
 

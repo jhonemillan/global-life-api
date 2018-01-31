@@ -8,7 +8,9 @@ var sequelizeConnection = new Sequelize(
     config.development.password, {  
         logging: console.log,  
         define: {  
-            timestamps: false  
+            timestamps: false,
+            freezeTableName: true,
+            underscored: true   
         }, dialect: config.development.dialect  
     }
 );  
@@ -21,7 +23,7 @@ var db = {
 db.medicamento = db.sequelize.import('./medicamentos');
 db.seguimiento = db.sequelize.import('./seguimiento');
 db.braden = db.sequelize.import('./braden');
-
+db.paciente = db.sequelize.import('./paciente');
 //relations
 db.seguimiento.belongsTo(db.medicamento, {foreignKey: 'id_prod'});
 module.exports = db;
