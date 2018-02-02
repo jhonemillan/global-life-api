@@ -1,6 +1,6 @@
 // initialize database connection
 module.exports = function(sequelize, DataTypes){
-  var medicamento = sequelize.define('medicamento', {
+  var medicamento = sequelize.define('medicamentos', {
     id_prod: { type: DataTypes.STRING, primaryKey: true, autoIncrement: true, allowNull: false},
     nom_prod: { type: DataTypes.STRING, allowNull: false}, 
     tip_prod: { type: DataTypes.STRING(100)},
