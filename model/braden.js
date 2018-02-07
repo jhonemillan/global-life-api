@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes){
       ctrl_miccion: { type: DataTypes.INTEGER, allowNull: true},
       caminar: { type: DataTypes.INTEGER, allowNull: true},
       traslado_silla_cama: { type: DataTypes.INTEGER, allowNull: true},
-      puntajeTotal_val: { type: DataTypes.INTEGER, allowNull: true},
+      total_puntaje_val: { type: DataTypes.INTEGER, allowNull: true},
       Observaciones_val : { type: DataTypes.STRING, allowNull: true},
       PlandeCuidados : { type: DataTypes.STRING, allowNull: true},
       EducacionPaciente : { type: DataTypes.STRING, allowNull: true},

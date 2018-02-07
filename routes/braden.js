@@ -34,7 +34,7 @@ router.post('/add',(req, res)=>{
       ctrl_miccion: req.body.ctrl_miccion,
       caminar: req.body.caminar,
       traslado_silla_cama: req.body.traslado_silla_cama,
-      puntajeTotal_val: req.body.puntajeTotal_val,
+      total_puntaje_val: req.body.puntajeTotal_val,
       Observaciones_val: req.body.Observaciones_val,
       PlandeCuidados : req.body.PlandeCuidados,
       iden_pac: req.body.iden_pac
