@@ -5,7 +5,8 @@ module.exports = function(sequelize, DataTypes){
         hora: { type: DataTypes.STRING(6), allowNull: false},
         id_prod: { type: DataTypes.STRING(50), allowNull: false},
         id_usu: {type: DataTypes.INTEGER(11), allowNull: true},
-        createdAt: {type: DataTypes.DATE, allowNull: true, defaultValue: DataTypes.Now}
+        createdAt: {type: DataTypes.DATE, allowNull: true, defaultValue: DataTypes.Now},
+        Id_ValSegEnf: {type: DataTypes.INTEGER(11), allowNull: true}
     });
 
     return seguimiento;

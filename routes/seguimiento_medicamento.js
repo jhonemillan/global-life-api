@@ -2,8 +2,9 @@ var express = require('express');
 var models = require('../model'); 
 var router = express.Router(); 
 
-router.get('/getAll', function(req, res) {      
+router.get('/getAll/:Id_ValSegEnf', function(req, res) {      
     models.seguimiento.findAll({
+        where: {Id_ValSegEnf: req.params.Id_ValSegEnf},
         include: [{
             model: models.medicamento
             ,attributes: ['nom_prod']
@@ -22,8 +23,8 @@ router.post('/add', (req, res)=>{
         dosis: req.body.dosis,
         hora: req.body.hora,
         id_prod: req.body.id_prod,
-        id_usu: req.body.id_usu
-        
+        id_usu: req.body.id_usu,
+        Id_ValSegEnf: req.body.Id_ValSegEnf
     });
 
     seg.save().then((data)=>{
