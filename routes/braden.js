@@ -13,6 +13,19 @@ router.get('/getAll/:id',(req, res)=>{
     }).catch((err)=>{console.log(err);});
 });
 
+router.get('/get/:id_pac/:id_visita',(req, res)=>{
+    models.braden.findAll({
+        where: {iden_pac: req.params.id_pac,
+                Id_ValSegEnf: req.params.id_visita
+        }
+    })
+    .then((data)=>{
+        res.status(200).json(data);
+    },(err)=>{
+        res.status(500).send(err);
+    }).catch((err)=>{console.log(err);});
+});
+
 router.post('/add',(req, res)=>{
     var val = models.braden.build({      
       Fecha: req.body.Fecha,
