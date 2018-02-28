@@ -51,7 +51,8 @@ router.post('/add',(req, res)=>{
       total_puntaje_val: req.body.puntajeTotal_val,
       Observaciones_val: req.body.Observaciones_val,
       PlandeCuidados : req.body.PlandeCuidados,
-      iden_pac: req.body.iden_pac
+      iden_pac: req.body.iden_pac,
+      id_usu: req.body.id_usu
     });
 
     val.save().then((datos)=> {
@@ -93,7 +94,8 @@ router.put('/update/:id',(req, res, next)=>{
             traslado_silla_cama: req.body.traslado_silla_cama,
             total_puntaje_val: req.body.puntajeTotal_val,
             Observaciones_val: req.body.Observaciones_val,
-            PlandeCuidados : req.body.PlandeCuidados   
+            PlandeCuidados : req.body.PlandeCuidados,
+            EducacionPaciente:req.body.EducacionPaciente    
           },['pielIntegra',
             'observacion_Piel',
             'percepcion_sensorial',
@@ -115,7 +117,8 @@ router.put('/update/:id',(req, res, next)=>{
             'traslado_silla_cama',
             'total_puntaje_val',
             'Observaciones_val',
-            'PlandeCuidados'
+            'PlandeCuidados',
+            'EducacionPaciente'
         ])        
         })
         .then(updatedOwner => {
