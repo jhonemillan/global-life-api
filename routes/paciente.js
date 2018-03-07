@@ -5,7 +5,10 @@ var router = express.Router();
 
 router.get('/getListPacientes',(req, res)=>{ 
     
-    models.paciente.findAll()
+    models.paciente.findAll({
+        where: {dis_pas : 1},
+        order: ['nom_Pac']
+    })
     .then((data)=>{
         res.status(200).json(data);
     })
