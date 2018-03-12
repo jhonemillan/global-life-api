@@ -28,7 +28,8 @@ module.exports = function(sequelize, DataTypes){
       EducacionPaciente : { type: DataTypes.STRING, allowNull: true},
       fecha_creacion: {type: DataTypes.DATE, allowNull: true, defaultValue: DataTypes.Now},
       id_usu: { type: DataTypes.INTEGER, allowNull: false},
-      iden_pac: { type: DataTypes.STRING, allowNull: true}
+      iden_pac: { type: DataTypes.STRING, allowNull: true},
+      Observacion_gral: {type: DataTypes.STRING(800), allowNull: true}
     });
   
     return valoracion;

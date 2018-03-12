@@ -52,7 +52,8 @@ router.post('/add',(req, res)=>{
       Observaciones_val: req.body.Observaciones_val,
       PlandeCuidados : req.body.PlandeCuidados,
       iden_pac: req.body.iden_pac,
-      id_usu: req.body.id_usu
+      id_usu: req.body.id_usu,
+      Observacion_gral: req.body.Observacion_gral
     });
 
     val.save().then((datos)=> {
@@ -95,7 +96,8 @@ router.put('/update/:id',(req, res, next)=>{
             total_puntaje_val: req.body.puntajeTotal_val,
             Observaciones_val: req.body.Observaciones_val,
             PlandeCuidados : req.body.PlandeCuidados,
-            EducacionPaciente:req.body.EducacionPaciente    
+            EducacionPaciente:req.body.EducacionPaciente,
+            Observacion_gral:req.body.Observacion_gral    
           },['pielIntegra',
             'observacion_Piel',
             'percepcion_sensorial',
@@ -118,7 +120,8 @@ router.put('/update/:id',(req, res, next)=>{
             'total_puntaje_val',
             'Observaciones_val',
             'PlandeCuidados',
-            'EducacionPaciente'
+            'EducacionPaciente',
+            'Observacion_gral'
         ])        
         })
         .then(updatedOwner => {
