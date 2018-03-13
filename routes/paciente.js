@@ -1,3 +1,5 @@
+var raw = require('../model/raw_queries');
+
 var express = require('express');
 var models = require('../model'); 
 var router = express.Router(); 
@@ -15,7 +17,6 @@ router.get('/getListPacientes',(req, res)=>{
     .catch((err)=>{
         console.log(err);
     })
-    
     // models.sequelize.query(`select ciudad
     //                         from paciente`,
     // { type: sequelize.QueryTypes.SELECT})
@@ -26,5 +27,9 @@ router.get('/getListPacientes',(req, res)=>{
     //     console.log(err);
     // });
 });
+
+router.get('/getUserInfo',(req, res)=>{
+    raw.getUserInfo(6061152)
+})
 
 module.exports = router; 
