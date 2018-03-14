@@ -28,8 +28,8 @@ router.get('/getListPacientes',(req, res)=>{
     // });
 });
 
-router.get('/getUserInfo',(req, res)=>{
-    raw.getUserInfo(6061152)
+router.get('/getUserInfo/:id_usu',(req, res)=>{
+    var user = raw.getUserInfo(req, res);    
 })
 
 module.exports = router; 
